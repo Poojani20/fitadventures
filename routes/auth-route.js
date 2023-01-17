@@ -16,7 +16,9 @@ router.post('/register',(req,res) =>{
    })
 
    .catch((err) => {
-       
+    if (err.code === 11000) {
+        return res.json({ succsess: false, message: "Email is already exist!" })
+    }
        res.json({ succsess: false, message: "Authdentication failed" })
    })
 });

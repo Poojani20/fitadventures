@@ -13,4 +13,5 @@ npm i express --save
 npm install --save-dev nodemon
 npm i mongoose --save
 npm install body-parser --save
+npm i bcrypt --save (to hash password)
  -->
