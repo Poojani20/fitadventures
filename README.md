@@ -7,4 +7,6 @@ workout and diet plan
 
 <!--   
 ng new <app_name>
+ng g c <component name>
+npm init
  -->

@@ -1,0 +1,25 @@
+{
+  "name": "fitadventures",
+  "version": "1.0.0",
+  "description": "workout and diet plan",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Poojani20/fitadventures.git"
+  },
+  "keywords": [
+    "Mongodb",
+    "expresshs",
+    "anular14",
+    "Node.js"
+  ],
+  "author": "Poojani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Poojani20/fitadventures/issues"
+  },
+  "homepage": "https://github.com/Poojani20/fitadventures#readme"
+}
