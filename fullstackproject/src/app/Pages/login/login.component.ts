@@ -26,7 +26,12 @@ export class LoginComponent implements OnInit {
     //alert("login successfull")
     const data = this.loginForm.value;
     this.auth.signin(data).subscribe((res)=>{
-      alert("Login Successfull")
+      if(res.success){
+        alert(res.message)
+      }else{
+        alert(res.message)
+      }
+     
 
     },err=>{
       alert("Login failed!")
