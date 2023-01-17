@@ -34,7 +34,17 @@ router.post('/register', (req, res) => {
   
 
 router.post('/login',(req,res) =>{
-    res.json("Login works")
+
+    User.find({email:req.body.email}).exec().then((result)=>{
+        if(result.length < 1){
+            return res.json({succsess:false,message:"User not found"})
+        }
+        const user =result[0]
+
+    }).catch(err =>{
+        res.json({succsess:false,message:"Authentication Failed!!"})
+    })
+    //res.json("Login works")
 });
 
 
