@@ -14,6 +14,9 @@ import { ContactComponent } from './Pages/contact/contact.component';
 import { RegisterComponent } from './Pages/register/register.component';
 import { LoginComponent } from './Pages/login/login.component';
 import { DietplanComponent } from './Pages/dietplan/dietplan.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
 
 @NgModule({
   declarations: [
@@ -32,7 +35,9 @@ import { DietplanComponent } from './Pages/dietplan/dietplan.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,67 @@
-<p>register works!</p>
+<br><br>
+
+<div class="container mt-5" >
+    <div class="row justify-container-center">
+        <div class="col md 6">
+            <div class="card shadow-lg p-5 mt-5 mb-5" >
+                <h2>Welcome Here!</h2><hr>
+                <div class="alert alert-success" role="alert">
+                   Account Has Been Created ! <a routerLink="/login" class="text-primary" style="cursor: pointer;">Login Here</a>
+                  </div>
+                
+                <form [formGroup]="signupForm" class="text-left">
+                    <div class="form-group">
+                        <label>Display Name</label>
+                        <input type="text" class="form-control" placeholder="Username" 
+                        formControlName="displayName">
+
+                        <label>Email</label>
+                        <input type="email" class="form-control" placeholder="Email Id here"
+                        formControlName="email">
+
+
+                        <label>Password</label>
+                        <input type="password" class="form-control" placeholder="*********"
+                        formControlName="password">
+
+
+                        
+                    </div><br>
+                    <button class="btn btn-outline-primary btn-block" (click)="signup()">Create Account</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!---<div class= "wrap">
+    <h2>Register</h2>
+    <form action="../php/insert.php" method="POST">
+        <input type="text" placeholder="First Name.." required name="firstname">
+        <input type="text" placeholder="Last Name.." required name="lastname">
+        <input type="text" placeholder="Email.." required name="email">
+        <input type="text" placeholder="Username.." required name="username">
+        <input type="password" placeholder="Password.." required name="pwd">
+        <input type="password" placeholder="Confirm password.." required name="pwdconn">
+        <input type="text" placeholder="Country.." required name="country">
+        
+        <input type="submit" value="Submit" onclick="checkform()">
+    </form>
+</div>-->
