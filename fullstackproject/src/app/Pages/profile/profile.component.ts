@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from 'express';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  data!:any;
+
+  constructor(private auth:AuthService) { }
 
   ngOnInit(): void {
   }
+  getProfile(){
+    this.auth.getProfile().subscribe(res=>{
+      if(res.success){
+        this.data = res.data;
+        
+      }else{
+        this.logout();
+      }
+    },err=>{
+
+    })
+  }
+  logout(){
+    
+   
+  }
+
+  
 
 }

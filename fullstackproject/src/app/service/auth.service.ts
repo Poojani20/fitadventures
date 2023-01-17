@@ -21,7 +21,7 @@ export class AuthService {
   let headers = {
     'Authorization':"Bearer" + localStorage.getItem('token')
   }
-  return this.http.get('http://localhost:8080/auth/profile',{headers:headers})
+  return this.http.get('http://localhost:8080/auth/profile',{headers:headers});
  }
 }
 
