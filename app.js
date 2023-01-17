@@ -7,6 +7,7 @@ const port=process.env.port || 8080 //this is for server port
 
 const authRoute = require('./routes/auth-route');
 const mongoose = require('mongoose');
+const cors = require('cors')
 
 mongoose.connect('mongodb://localhost:27017/fitadventures',(err) =>{
     if(err){
@@ -21,6 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
 app.use(bodyParser.json())
+app.use(cors())
 
 
 app.use('/auth',authRoute);
