@@ -24,5 +24,8 @@
   "homepage": "https://github.com/Poojani20/fitadventures#readme",
   "dependencies": {
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
   }
 }
