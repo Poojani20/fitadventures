@@ -39,19 +39,24 @@ router.post('/login',(req,res) =>{
         if(result.length < 1){
             return res.json({succsess:false,message:"User not found"})
         }
-        const user =result[0]
+        const user =result[0];
+        bcrypt.compare(req.body.password,user.password,(err,ret)=>{
+            if(ret){
+                return res.json({succsess:true,message:"Login Successfull!"})
+            }else{
+                return res.json({succsess:true,message:"Password does not match!"})
+            }
+        })
 
     }).catch(err =>{
         res.json({succsess:false,message:"Authentication Failed!!"})
     })
     //res.json("Login works")
-});
+})
 
-
-
-
-
-
+router.get('/profile', (req,res)=>{
+        
+})
 
 
 
