@@ -10,6 +10,7 @@ import { RegisterComponent } from './Pages/register/register.component';
 import { TaskComponent } from './Pages/task/task.component';
 import { WelcomeComponent } from './Pages/welcome/welcome.component';
 import { WorkoutComponent } from './Pages/workout/workout.component';
+import { DietplanComponent } from './Pages/dietplan/dietplan.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'welcome',pathMatch:"full"},
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path:"contact",component:ContactComponent},
   {path:"register",component:RegisterComponent},
   {path:"login",component:LoginComponent},
-  {path:"task",component:TaskComponent}
+  {path:"task",component:TaskComponent},
+  {path:"dietplan",component:DietplanComponent}
 
 
 ];

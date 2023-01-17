@@ -13,6 +13,7 @@ import { AboutComponent } from './Pages/about/about.component';
 import { ContactComponent } from './Pages/contact/contact.component';
 import { RegisterComponent } from './Pages/register/register.component';
 import { LoginComponent } from './Pages/login/login.component';
+import { DietplanComponent } from './Pages/dietplan/dietplan.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { LoginComponent } from './Pages/login/login.component';
     AboutComponent,
     ContactComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    DietplanComponent
   ],
   imports: [
     BrowserModule,
