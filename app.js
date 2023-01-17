@@ -1,5 +1,6 @@
 const express = require('express');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
+
 
 const app = express();
 
@@ -7,6 +8,7 @@ const port=process.env.port || 8080 //this is for server port
 
 const authRoute = require('./routes/auth-route');
 const mongoose = require('mongoose');
+mongoose.set('strictQuery', false);
 const cors = require('cors')
 
 mongoose.connect('mongodb://localhost:27017/fitadventures',(err) =>{

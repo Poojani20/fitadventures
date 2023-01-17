@@ -8,6 +8,7 @@ const checkAuth = require('../middleware/check-auth');
 
 
 
+
 router.post('/register', (req, res) => {
     bcrypt.hash(req.body.password, 10, (err, hash) => {
         if (err) {
