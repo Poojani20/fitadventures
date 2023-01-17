@@ -16,4 +16,5 @@ npm install body-parser --save
 npm i bcrypt --save (to hash password)
 npm i cors --save ( to directly connect the client and server)
 ng g s service/auth
+npm i jsonwebtoken --save ( to get a token for the logging )
  -->
