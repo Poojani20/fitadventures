@@ -1,6 +1,9 @@
 const router = require('express').Router();
 const User = require('../models/user');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const user = require('../models/user');
+const checkAuth = require('../middleware/check-auth');
 
 
 
@@ -42,7 +45,13 @@ router.post('/login',(req,res) =>{
         const user =result[0];
         bcrypt.compare(req.body.password,user.password,(err,ret)=>{
             if(ret){
-                return res.json({succsess:true,message:"Login Successfull!"})
+                const payload = {
+                    userId : user._id,
+                   
+                }
+                const token = jwt.sign(payload,"webBatch")
+                
+                return res.json({succsess:true,token:token,message:"Login Successfull!"})
             }else{
                 return res.json({succsess:true,message:"Password does not match!"})
             }
@@ -51,11 +60,17 @@ router.post('/login',(req,res) =>{
     }).catch(err =>{
         res.json({succsess:false,message:"Authentication Failed!!"})
     })
-    //res.json("Login works")
+    
 })
 
-router.get('/profile', (req,res)=>{
-        
+router.get('/profile', checkAuth, (req,res)=>{
+        const userId = "63c692c5cf7e607432337b38";
+        User.findById(userId).exec().then((result)=>{
+
+            res.json({succsess:true, data:result})
+        }).catch(err=>{
+            res.json({succsess:false, message:"Server error"})
+        })
 })
 
 
