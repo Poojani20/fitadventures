@@ -4,7 +4,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const socketio = require('socket.io');
 const formatMessage = require('../fitadventures/fullstackproject/src/app/utils/messages');
-const {userJoin, getCurrentUser} = require ('../fitadventures/fullstackproject/src/app/utils/users');
+const {userJoin, getCurrentUser, userLeave, getRoomUsers} = require ('../fitadventures/fullstackproject/src/app/utils/users');
 
 const app = express();
 const server = http.createServer(app);
@@ -16,12 +16,12 @@ app.use(express.static(path.join(__dirname, 'pages')));
 const botName = 'Fit Mates';
 
 //run when client connects
-io.on('connection', socket =>{
-    socket.on('joinRoom', ({username, room}) =>{
-
-        const user = userJoin(socket.id, username, room);
-
-        socket.join(user.room);
+io.on("connection", (socket) => {
+    console.log(io.of("/").adapter);
+    socket.on("joinRoom", ({ username, room }) => {
+      const user = userJoin(socket.id, username, room);
+  
+      socket.join(user.room);
 
          //welcome current user
 
@@ -47,9 +47,22 @@ io.on('connection', socket =>{
       });
 
     //runs when client disconnets
-    socket.on('disconnect', () => {
-        io.emit('message', formatMessage (botName,'A user has left the chat'));
-    });
+    socket.on("disconnect", () => {
+        const user = userLeave(socket.id);
+    
+        if (user) {
+          io.to(user.room).emit(
+            "message",
+            formatMessage(botName, `${user.username} has left the chat`)
+          );
+
+          // Send users and room info
+      io.to(user.room).emit("roomUsers", {
+        room: user.room,
+        users: getRoomUsers(user.room),
+      });
+    }
+});
 });
 
 const port=process.env.port || 8080 //this is for server port 
