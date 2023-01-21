@@ -3,7 +3,8 @@ const http = require('http');
 const express = require('express');
 const bodyParser = require('body-parser');
 const socketio = require('socket.io');
-const formatMessage = require('../fitadventures/fullstackproject/src/app/utils/messages')
+const formatMessage = require('../fitadventures/fullstackproject/src/app/utils/messages');
+const {userJoin, getCurrentUser} = require ('../fitadventures/fullstackproject/src/app/utils/users');
 
 const app = express();
 const server = http.createServer(app);
@@ -16,23 +17,38 @@ const botName = 'Fit Mates';
 
 //run when client connects
 io.on('connection', socket =>{
-    console.log('New web socket connection !!');
+    socket.on('joinRoom', ({username, room}) =>{
 
-    //welcome current user
+        const user = userJoin(socket.id, username, room);
 
-    socket.emit('message', formatMessage (botName,'Welcome to Chat with mates!')); // for one client
+        socket.join(user.room);
+
+         //welcome current user
+
+         socket.broadcast.to(user.room).emit(
+           "message",
+           formatMessage(botName, `${user.username} has joined the chat`)
+         ); // for one client
 
     //broadcast when a user connets
     socket.broadcast.emit('message', formatMessage (botName, 'A user has joined the chat'));
 
+    });
+
+   
+
+    
+
+    //listen for chatmessage
+    socket.on("chatMessage", (msg) => {
+        const user = getCurrentUser(socket.id);
+    
+        io.to(user.room).emit("message", formatMessage(user.username, msg));
+      });
+
     //runs when client disconnets
     socket.on('disconnect', () => {
         io.emit('message', formatMessage (botName,'A user has left the chat'));
-    });
-
-    //listen for chatmessage
-    socket.on('chatMessage', msg => {
-       io.emit('message',formatMessage ('USER', msg));
     });
 });
 
