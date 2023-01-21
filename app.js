@@ -2,12 +2,19 @@ const path = require('path');
 const http = require('http');
 const express = require('express');
 const bodyParser = require('body-parser');
-
+const socketio = require('socket.io');
 
 const app = express();
+const server = http.createServer(app);
+const io = socketio(server);
 
 //set static folder
 app.use(express.static(path.join(__dirname, 'pages')));
+
+//run when client connects
+io.on('connection', socket =>{
+    console.log('New web socket connection !!');
+});
 
 const port=process.env.port || 8080 //this is for server port 
 
