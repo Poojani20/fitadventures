@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { ChattwoComponent } from '../chattwo/chattwo.component';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ChatService} from 'src/app/service/chat.service';
 
@@ -13,31 +12,22 @@ import { ChatService} from 'src/app/service/chat.service';
 
 export class ChatComponent implements OnInit {
   
-  signupForm!: FormGroup;
+  //signupForm!: FormGroup;
 
   //@ViewChild(ChattwoComponent) chattwo: any;
 
-  constructor(private fb:FormBuilder, private chat:ChatService){
-    this.signupForm = this.fb.group({
-      'displayName': ['', Validators.required],
+  constructor(){
+   /* this.signupForm = this.fb.group({
+      'displayName': ['', Validators.required],*/
    
-  })
+  }
 
  
 
-  this.ngOnInit(); void {
-  }
-   signup();{
-
-    const data = this.signupForm.value;
-   }
-
-}
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
   }
+   
+
 }
-function signup() {
-  throw new Error('Function not implemented.');
-}
+  
 

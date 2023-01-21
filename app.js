@@ -14,6 +14,23 @@ app.use(express.static(path.join(__dirname, 'pages')));
 //run when client connects
 io.on('connection', socket =>{
     console.log('New web socket connection !!');
+
+    //welcome current user
+
+    socket.emit('message','Welcome to Chat with mates!'); // for one client
+
+    //broadcast when a user connets
+    socket.broadcast.emit('message', 'A user has joined the chat');
+
+    //runs when client disconnets
+    socket.on('disconnect', () => {
+        io.emit('message', 'A user has left the chat');
+    });
+
+    //listen for chatmessage
+    socket.on('chatMessage', msg => {
+       io.emit('message', msg);
+    });
 });
 
 const port=process.env.port || 8080 //this is for server port 
