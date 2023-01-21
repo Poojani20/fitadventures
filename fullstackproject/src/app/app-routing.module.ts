@@ -12,6 +12,7 @@ import { WelcomeComponent } from './Pages/welcome/welcome.component';
 import { WorkoutComponent } from './Pages/workout/workout.component';
 import { DietplanComponent } from './Pages/dietplan/dietplan.component';
 import { ProfileComponent } from './Pages/profile/profile.component';
+import { ChatComponent } from './Pages/chat/chat.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'welcome',pathMatch:"full"},
@@ -26,7 +27,8 @@ const routes: Routes = [
   {path:"login",component:LoginComponent},
   {path:"task",component:TaskComponent},
   {path:"dietplan",component:DietplanComponent},
-  {path:"profile",component:ProfileComponent}
+  {path:"profile",component:ProfileComponent},
+  {path:"chat",component:ChatComponent}
 
 
 ];

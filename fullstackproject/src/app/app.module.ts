@@ -17,6 +17,7 @@ import { DietplanComponent } from './Pages/dietplan/dietplan.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 import { ProfileComponent } from './Pages/profile/profile.component';
+import { ChatComponent } from './Pages/chat/chat.component';
 
 
 
@@ -34,7 +35,8 @@ import { ProfileComponent } from './Pages/profile/profile.component';
     RegisterComponent,
     LoginComponent,
     DietplanComponent,
-    ProfileComponent
+    ProfileComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
