@@ -1,8 +1,13 @@
+const path = require('path');
+const http = require('http');
 const express = require('express');
 const bodyParser = require('body-parser');
 
 
 const app = express();
+
+//set static folder
+app.use(express.static(path.join(__dirname, 'pages')));
 
 const port=process.env.port || 8080 //this is for server port 
 
