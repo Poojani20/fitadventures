@@ -3,6 +3,7 @@ const http = require('http');
 const express = require('express');
 const bodyParser = require('body-parser');
 const socketio = require('socket.io');
+const formatMessage = require('../fitadventures/fullstackproject/src/app/utils/messages')
 
 const app = express();
 const server = http.createServer(app);
@@ -11,25 +12,27 @@ const io = socketio(server);
 //set static folder
 app.use(express.static(path.join(__dirname, 'pages')));
 
+const botName = 'Fit Mates';
+
 //run when client connects
 io.on('connection', socket =>{
     console.log('New web socket connection !!');
 
     //welcome current user
 
-    socket.emit('message','Welcome to Chat with mates!'); // for one client
+    socket.emit('message', formatMessage (botName,'Welcome to Chat with mates!')); // for one client
 
     //broadcast when a user connets
-    socket.broadcast.emit('message', 'A user has joined the chat');
+    socket.broadcast.emit('message', formatMessage (botName, 'A user has joined the chat'));
 
     //runs when client disconnets
     socket.on('disconnect', () => {
-        io.emit('message', 'A user has left the chat');
+        io.emit('message', formatMessage (botName,'A user has left the chat'));
     });
 
     //listen for chatmessage
     socket.on('chatMessage', msg => {
-       io.emit('message', msg);
+       io.emit('message',formatMessage ('USER', msg));
     });
 });
 
