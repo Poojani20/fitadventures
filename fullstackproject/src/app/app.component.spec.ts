@@ -13,18 +13,21 @@ describe('AppComponent', () => {
       ],
     }).compileComponents();
   });
+  //first test case
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
+  //second test case
 
   it(`should have as title 'fullstackproject'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.title).toEqual('fullstackproject');
   });
+  //third test case
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
