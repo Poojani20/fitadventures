@@ -19,5 +19,8 @@ ng g s service/auth
 npm i jsonwebtoken --save ( to get a token for the logging )
 npm install socket.io --save
 npm install moment --save ( to customize date and time)
+npm test
+ng test
+npm i --save-dev chai 
 
  -->
