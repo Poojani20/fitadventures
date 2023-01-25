@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bmi.component.scss']
 })
 export class BmiComponent implements OnInit {
+  title = 'BMIWebApp'
+  name:string = ''
+  height!: number;
+  weight!: number;
+  bmi!: number;
 
   constructor() { }
 
   ngOnInit(): void {
   }
+  calcBMI() {
+    this.bmi = Math.round((this.weight / this.height / this.height) * 703)
+  }
+
 
 }
