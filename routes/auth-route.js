@@ -1,10 +1,11 @@
 const router = require('express').Router();
 const User = require('../models/user');
+const Todo = require('../models/todo');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const user = require('../models/user');
+const todo = require('../models/todo');
 const checkAuth = require('../middleware/check-auth');
-
 
 
 
