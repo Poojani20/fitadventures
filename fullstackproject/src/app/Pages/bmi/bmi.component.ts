@@ -17,7 +17,10 @@ export class BmiComponent implements OnInit {
   ngOnInit(): void {
   }
   calcBMI() {
-    this.bmi = Math.round((this.weight / this.height / this.height) * 703)
+
+    this.bmi = Math.round((this.weight) / (this.height * this.height) * 0.01)
+
+    //this.bmi = Math.round((this.weight / this.height / this.height) * 703)
   }
 
 
