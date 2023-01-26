@@ -1,4 +1,6 @@
-<div class="ms-2 container-fluid">
+<br><br><br><br>
+
+<div class="ms-2 container-fluid mt-5" >
 
     <div class="row">
       <div class="col-6">
@@ -23,41 +25,119 @@
               </div>
             </div>
             <div class="text-center mt-2">
-              <button style="width: 200px" class="btn btn-primary mb-2" (click)="calcBMI()">
-                Calculate BMI
+              <button style="width: 300px" class="btn" (click)="calcBMI()">
+                Calculate BMI Index
               </button>
             </div>
           </div>
         </div>
       </div>
+      
   
   
       <div class="col-6">
-        <img width="500" height="500" src="assets/images/bmichart.png">
+        <img width="500" height="500" src="../../../assets/Images/bmichart.png" class="bmichart">
       </div>
+
     </div>
+    
+
+
+
+
+<div class="ms-2 container-fluid mt-5" >
+
+    
   
   
     <div class="row">
+
       <div class="col-6">
         <div class="card mt-4">
-          <h5 class="card-header">BMI Calculator Output</h5>
+          <h5 class="card-header">BMI Index</h5>
           <div class="card-body">
             <div>
               <div>
-                <label class="fw-bold">Name</label>
+                <label class="fw-bold">Name:</label>
                 <br>
                 {{name}}
               </div>
-              <h4 *ngIf="bmi" class="mt-2">BMI: {{bmi}}</h4>
+              <label class="fw-bold">BMI Index:</label>
+              <h4 *ngIf="bmi" class="mt-2">{{bmi}}</h4>
             </div>
           </div>
         </div>
       </div>
+   
+
+  
+        <div class="col-6">
+          <div class="card mt-4">
+            <h5 class="card-header">BMI Result</h5>
+            <div class="card-body">
+              <div>
+                <div>
+                  <label class="fw-bold">Name:</label>
+                  <br>
+                  {{name}}
+                </div>
+                <label class="fw-bold">Result:</label>
+                <h4 *ngIf="bmi" class="mt-2">{{result}}</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
     </div>
+
+    <div class="ms-2 container-fluid mt-5" >
+
+    
   
   
-  </div>
+        <div class="row">
+            
+          <div class="col-6">
+            <div>
+                <div class="text-center mt-2">
+                    <a href="" class="btn" routerLink="/dietplan">Go get your diet plan hurry up 😃 &#8594;</a>
+                </div>
+            </div>
+            </div>
+           
+            <div class="col-6">
+                <div>
+                    <div class="text-center mt-2">
+                        <a href="" class="btn" routerLink="/workout">Go get your workout plan hurry up 😃 &#8594;</a>
+                    </div>
+                </div>
+                </div>
+              </div>
+             
+               
+                 
+           
+               
+             
+           
+         
+       
+    
+      
+           
+    
+       
+    
+
+   
+
+      
+  
+ 
+
+  <br><br>
 
 
 
