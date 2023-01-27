@@ -9,6 +9,8 @@ import { Observable } from 'rxjs';
 })
 export class TaskService {
 
+  baseUrl!:string;
+
   constructor(private http:HttpClient) { }
 
   signup(data:any) :Observable<any>{

@@ -4,8 +4,9 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const todoSchema = new Schema({
-    text : String,
-    done : Boolean
+    task:{type:String},
+    id:{type:Number}
+   
 
 }) 
 
