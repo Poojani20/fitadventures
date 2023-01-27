@@ -38,6 +38,7 @@ a {
     border-radius: 30px;
     width: 300px;
     align-items: center;
+	font-size: 20px;
 
 }
 
@@ -45,20 +46,20 @@ a {
 .join-container {
 	max-width: 500px;
 	margin: 80px auto;
-	color: #fff;
+	color: rgb(51, 8, 8);
 }
 
 .join-header {
 	text-align: center;
 	padding: 20px;
-	background: var(--dark-color-a);
+	background:#cae2c1;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 }
 
 .join-main {
 	padding: 30px 40px;
-	background: var(--dark-color-b);
+	background:#eddea3;
 }
 
 .join-main p {
@@ -67,11 +68,13 @@ a {
 
 .join-main .form-control {
 	margin-bottom: 20px;
+	background-color: #eef3df;
 }
 
 .join-main label {
 	display: block;
 	margin-bottom: 5px;
+	font-size: 20px;
 }
 
 .join-main input[type='text'] {
