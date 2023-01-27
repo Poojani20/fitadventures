@@ -1,5 +1,6 @@
 h2{
     color:#563434;
+    text-align: center;
 }
 .btn {
     display: inline-block;
@@ -10,8 +11,17 @@ h2{
     border-radius: 30px;
     width: 300px;
     align-items: center;
+    font-size: 18px;
 
 }
 h5{
     color: #650480;
+}
+.join-container {
+	max-width: 500px;
+	margin: 80px auto;
+	color: #fff;
+}
+.card{
+    background-color: #efedb5;
 }
