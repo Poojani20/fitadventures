@@ -65,7 +65,7 @@ io.on("connection", (socket) => {
 });
 });
 
-const port=process.env.port || 3000 //this is for server port 
+const port=process.env.port || 8080 //this is for server port 
 
 const authRoute = require('./routes/auth-route');
 const mongoose = require('mongoose');
@@ -91,7 +91,7 @@ app.use(cors())
 app.use('/auth',authRoute);
 
 app.get('/', (req, res) => {
-    res.send("Welcome here :)")
+    res.send("Welcome here 123 :)")
 })
 
 app.listen(port,()=>{
