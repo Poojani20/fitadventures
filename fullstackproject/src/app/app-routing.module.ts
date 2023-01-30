@@ -16,7 +16,7 @@ import { ChatComponent } from './Pages/chat/chat.component';
 import { ChattwoComponent } from './Pages/chattwo/chattwo.component';
 
 const routes: Routes = [
-  {path:'',redirectTo:'welcome',pathMatch:"full"},
+  {path:'',redirectTo:'register',pathMatch:"full"},
   {path:"welcome",component:WelcomeComponent},
   {path:"header",component:HeaderComponent},
   {path:"footer",component:FooterComponent},
