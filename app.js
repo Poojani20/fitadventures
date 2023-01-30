@@ -35,10 +35,6 @@ io.on("connection", (socket) => {
 
     });
 
-   
-
-    
-
     //listen for chatmessage
     socket.on("chatMessage", (msg) => {
         const user = getCurrentUser(socket.id);

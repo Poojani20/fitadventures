@@ -12,13 +12,10 @@ import { ChatService} from 'src/app/service/chat.service';
 
 export class ChatComponent implements OnInit {
   
-  //signupForm!: FormGroup;
-
-  //@ViewChild(ChattwoComponent) chattwo: any;
+  
 
   constructor(){
-   /* this.signupForm = this.fb.group({
-      'displayName': ['', Validators.required],*/
+   
    
   }
 
